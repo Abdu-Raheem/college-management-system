@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Educational Management System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .header {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .header p {
+            font-size: 1.2rem;
+        }
+        .nav {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            text-align: center;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: white;
+        }
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 0 0.5rem;
+            transition: transform 0.3s;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+        .features {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .footer {
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Educational Management System</h1>
+        <p>Comprehensive School Management Solution</p>
+    </div>
+
+    <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/login/">Login</a>
+        <a href="/register/">Register</a>
+    </nav>
+
+    <div class="hero">
+        <h2>Welcome to Our Platform</h2>
+        <p>Manage your educational institution with ease</p>
+        <a href="/login/" class="btn">Login</a>
+        <a href="/register/" class="btn">Get Started</a>
+    </div>
+
+    <div class="features">
+        <div class="feature-card">
+            <h3>For Students</h3>
+            <p>Enroll in subjects, view exam results, and connect with tutors all in one place.</p>
+        </div>
+        <div class="feature-card">
+            <h3>For Tutors</h3>
+            <p>Manage your subjects, track student progress, and enter exam results efficiently.</p>
+        </div>
+        <div class="feature-card">
+            <h3>For HODs</h3>
+            <p>Oversee your department, manage subjects, and assign tutors to students.</p>
+        </div>
+        <div class="feature-card">
+            <h3>For Principals</h3>
+            <p>Get a comprehensive view of all departments, students, and generate reports.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Educational Management System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

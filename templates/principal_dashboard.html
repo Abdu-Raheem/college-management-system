@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #9b59b6;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            font-size: 1.5rem;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .stat-card h3 {
+            color: #9b59b6;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .stat-card p {
+            color: #555;
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #9b59b6;
+            padding-bottom: 0.5rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        table th, table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        table th {
+            background-color: #9b59b6;
+            color: white;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #9b59b6;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Principal Dashboard</h1>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/logout/">Logout</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>12</h3>
+                <p>Departments</p>
+            </div>
+            <div class="stat-card">
+                <h3>45</h3>
+                <p>Tutors</p>
+            </div>
+            <div class="stat-card">
+                <h3>150</h3>
+                <p>Subjects</p>
+            </div>
+            <div class="stat-card">
+                <h3>1250</h3>
+                <p>Students</p>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="card">
+                <h3>Principal Information</h3>
+                <div style="margin-top: 1rem;">
+                    <p><strong>Name:</strong> Dr. Robert Anderson</p>
+                    <p><strong>Email:</strong> robert.anderson@example.com</p>
+                    <p><strong>Phone:</strong> +1234567890</p>
+                    <p><strong>Role:</strong> Principal</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>All Departments</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Department Name</th>
+                            <th>HOD Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Computer Science</td>
+                            <td>Prof. Michael Brown</td>
+                        </tr>
+                        <tr>
+                            <td>Mathematics</td>
+                            <td>Dr. Alice Wilson</td>
+                        </tr>
+                        <tr>
+                            <td>English</td>
+                            <td>Prof. David Lee</td>
+                        </tr>
+                        <tr>
+                            <td>Physics</td>
+                            <td>Dr. Susan Taylor</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="/principal/departments/" class="btn">Manage Departments</a>
+            </div>
+
+            <div class="card">
+                <h3>Quick Actions</h3>
+                <a href="/principal/departments/" class="btn">Manage Departments</a><br>
+                <a href="/principal/subjects/" class="btn">View All Subjects</a><br>
+                <a href="/principal/tutors/" class="btn">View All Tutors</a><br>
+                <a href="/principal/students/" class="btn">View All Students</a><br>
+                <a href="/principal/reports/" class="btn">Generate Reports</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

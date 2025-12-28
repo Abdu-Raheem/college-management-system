@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll in Subjects - Educational Management System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #3498db;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            font-size: 1.5rem;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        .content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .checkbox-group {
+            margin-top: 1rem;
+        }
+        .checkbox-item {
+            margin-bottom: 0.75rem;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 0.5rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .btn-secondary {
+            background-color: #95a5a6;
+            margin-left: 1rem;
+        }
+        .btn-secondary:hover {
+            background-color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Student Dashboard</h1>
+        <nav class="nav">
+            <a href="/student/dashboard/">Dashboard</a>
+            <a href="/logout/">Logout</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <h2>Enroll in Subjects</h2>
+            <p style="margin-top: 1rem; margin-bottom: 2rem; color: #666;">Select the subjects you want to enroll in:</p>
+
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label>Available Subjects:</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cs101" name="subjects" value="CS101">
+                            <label for="cs101">CS101 - Introduction to Computer Science (Computer Science)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cs201" name="subjects" value="CS201">
+                            <label for="cs201">CS201 - Data Structures (Computer Science)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="math201" name="subjects" value="MATH201">
+                            <label for="math201">MATH201 - Calculus (Mathematics)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="eng101" name="subjects" value="ENG101">
+                            <label for="eng101">ENG101 - English Composition (English)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="phy101" name="subjects" value="PHY101">
+                            <label for="phy101">PHY101 - Physics Fundamentals (Physics)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn">Enroll Selected Subjects</button>
+                <a href="/student/dashboard/" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

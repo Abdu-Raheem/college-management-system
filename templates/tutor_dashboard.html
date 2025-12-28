@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #27ae60;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            font-size: 1.5rem;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #27ae60;
+            padding-bottom: 0.5rem;
+        }
+        .info-item {
+            margin-bottom: 0.75rem;
+        }
+        .info-item strong {
+            color: #555;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        table th, table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        table th {
+            background-color: #27ae60;
+            color: white;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #27ae60;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Tutor Dashboard</h1>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/logout/">Logout</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="dashboard-grid">
+            <div class="card">
+                <h3>Tutor Information</h3>
+                <div class="info-item">
+                    <strong>Name:</strong> Dr. Sarah Smith
+                </div>
+                <div class="info-item">
+                    <strong>Email:</strong> sarah.smith@example.com
+                </div>
+                <div class="info-item">
+                    <strong>Phone:</strong> +1234567890
+                </div>
+                <div class="info-item">
+                    <strong>Role:</strong> Tutor
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Assigned Subjects</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject Code</th>
+                            <th>Subject Name</th>
+                            <th>Department</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CS101</td>
+                            <td>Introduction to Computer Science</td>
+                            <td>Computer Science</td>
+                        </tr>
+                        <tr>
+                            <td>CS201</td>
+                            <td>Data Structures</td>
+                            <td>Computer Science</td>
+                        </tr>
+                        <tr>
+                            <td>CS301</td>
+                            <td>Algorithms</td>
+                            <td>Computer Science</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>Assigned Students</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Email</th>
+                            <th>Subject</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>john.doe@example.com</td>
+                            <td>Introduction to Computer Science</td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>jane.smith@example.com</td>
+                            <td>Data Structures</td>
+                        </tr>
+                        <tr>
+                            <td>Bob Johnson</td>
+                            <td>bob.johnson@example.com</td>
+                            <td>Algorithms</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>Quick Actions</h3>
+                <a href="/tutor/students/" class="btn">View All Students</a><br>
+                <a href="/tutor/subjects/" class="btn">Manage Subjects</a><br>
+                <a href="/tutor/results/" class="btn">Enter Exam Results</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

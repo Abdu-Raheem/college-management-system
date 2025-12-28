@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #3498db;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            font-size: 1.5rem;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+        .info-item {
+            margin-bottom: 0.75rem;
+        }
+        .info-item strong {
+            color: #555;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        table th, table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        table th {
+            background-color: #3498db;
+            color: white;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Student Dashboard</h1>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/logout/">Logout</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="dashboard-grid">
+            <div class="card">
+                <h3>Student Information</h3>
+                <div class="info-item">
+                    <strong>Name:</strong> John Doe
+                </div>
+                <div class="info-item">
+                    <strong>Email:</strong> john.doe@example.com
+                </div>
+                <div class="info-item">
+                    <strong>Phone:</strong> +1234567890
+                </div>
+                <div class="info-item">
+                    <strong>Role:</strong> Student
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Enrolled Subjects</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject Code</th>
+                            <th>Subject Name</th>
+                            <th>Department</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CS101</td>
+                            <td>Introduction to Computer Science</td>
+                            <td>Computer Science</td>
+                        </tr>
+                        <tr>
+                            <td>MATH201</td>
+                            <td>Calculus</td>
+                            <td>Mathematics</td>
+                        </tr>
+                        <tr>
+                            <td>ENG101</td>
+                            <td>English Composition</td>
+                            <td>English</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="/student/enroll/" class="btn">Enroll in Subjects</a>
+            </div>
+
+            <div class="card">
+                <h3>Exam Results</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Marks</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Introduction to Computer Science</td>
+                            <td>85</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>Calculus</td>
+                            <td>92</td>
+                            <td>A+</td>
+                        </tr>
+                        <tr>
+                            <td>English Composition</td>
+                            <td>78</td>
+                            <td>B+</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>Assigned Tutors</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tutor Name</th>
+                            <th>Email</th>
+                            <th>Subject</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dr. Smith</td>
+                            <td>smith@example.com</td>
+                            <td>Computer Science</td>
+                        </tr>
+                        <tr>
+                            <td>Prof. Johnson</td>
+                            <td>johnson@example.com</td>
+                            <td>Mathematics</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

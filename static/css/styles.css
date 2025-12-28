@@ -1,0 +1,16 @@
+/* Main Stylesheet - Import all CSS files */
+/* This is the main CSS file that can be included in templates */
+
+/* Note: In a real Django project, you would include each CSS file separately in your templates,
+   or use a build tool to combine them. This file serves as a reference for all available styles. */
+
+/* Import order matters - base styles first, then specific styles */
+/* @import url('base.css'); */
+/* @import url('home.css'); */
+/* @import url('auth.css'); */
+/* @import url('dashboard.css'); */
+/* @import url('enroll.css'); */
+/* @import url('results.css'); */
+
+/* For production, use a CSS bundler or include files individually in templates */
+
