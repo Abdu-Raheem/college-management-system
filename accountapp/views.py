@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 
 from accountapp.models import Profile
+from .forms import ProfileForm
 
 
 def sample(request):
@@ -26,8 +27,11 @@ def order_list(request):
     })
 
 
-def profile(request, id):
-    profile = Profile.objects.get(id=id)
+def profile(request, user_id):
+    if not Profile.objects.filter(id=user_id).exists():
+        return render(request, 'profile-not-found.html')
+
+    profile = Profile.objects.get(id=user_id)
     return render(request, 'profile.html', context={
         'name': profile.name,
         'email': profile.email,
@@ -44,31 +48,17 @@ def profile(request, id):
 
 def create_profile(request):
     if request.method == 'POST':
-        id = request.POST.get('id')
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        phone = request.POST.get('phone')
-        house_name = request.POST.get('house_name')
-        street = request.POST.get('street')
-        landmark = request.POST.get('landmark')
-        pincode = request.POST.get('pincode')
-        city = request.POST.get('city')
-        state = request.POST.get('state')
-        country = request.POST.get('country')
-        profile = Profile.objects.create(
-            id=id, 
-            name=name, 
-            email=email, 
-            phone=phone, 
-            house_name=house_name, 
-            street=street, 
-            landmark=landmark, 
-            pincode=pincode, 
-            city=city, 
-            state=state, 
-            country=country,
-            role='STUDENT'
-        )
-        profile.save()
-        return redirect('profile', id=id)
-    return render(request, 'create-profile.html')
+        form = ProfileForm(request.POST)
+        if form.is_valid():
+            profile = Profile.objects.update_or_create()
+            profile.save()
+            return redirect('profile', user_id=profile.id)
+        else:
+            return render(request, 'create-profile.html', context={
+                'form': form
+            })
+    else:
+        form = ProfileForm()
+    return render(request, 'create-profile.html', context={
+        'form': form
+    })

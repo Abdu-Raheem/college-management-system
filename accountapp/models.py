@@ -14,7 +14,7 @@ class Profile(models.Model):
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=100)
     role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='Admin')
-    phone = models.CharField(max_length=15)
+    phone = models.IntegerField(blank=True, null=True)
     house_name = models.CharField(max_length=100)
     street = models.CharField(max_length=100)
     landmark = models.CharField(max_length=100)
