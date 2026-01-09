@@ -1,19 +1,25 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser, Group, Permission
 
 
-class Profile(models.Model):
-    ROLE_CHOICES = [
-        ('STUDENT', 'Student'),
-        ('TUTOR', 'tutor'),
-        ('HOD', 'head of department'),
-        ('PRINCIPAL', 'principal'),
-    ]
-    
-    id = models.CharField(max_length=100, primary_key=True)
-    name = models.CharField(max_length=100)
-    email = models.EmailField(unique=True)
-    password = models.CharField(max_length=100)
-    role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='Admin')
+class CustomUser(AbstractUser):
+    user_type = models.CharField(
+        max_length=20,
+        choices=[
+            ('student', 'Student'),
+            ('tutor', 'Tutor'),
+            ('hod', 'HOD'),
+            ('principal', 'Principal'),
+        ],
+        default='student'
+    )
+    profile_pic = models.ImageField(upload_to='profile_pics/', null=True, blank=True)
+    groups = models.ManyToManyField(Group, blank=True)
+    user_permissions = models.ManyToManyField(Permission, blank=True)
+
+
+class Profile(models.Model):    
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
     phone = models.IntegerField(blank=True, null=True)
     house_name = models.CharField(max_length=100)
     street = models.CharField(max_length=100)
@@ -22,19 +28,11 @@ class Profile(models.Model):
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
     country = models.CharField(max_length=100)
-    profile_picture = models.ImageField(upload_to='profile_pictures/', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     is_active = models.BooleanField(default=True)
     is_verified = models.BooleanField(default=False)
     
     def __str__(self):
-        return f"{self.name} ({self.email}) - {self.get_role_display()}"
+        return f"{self.user.id} - {self.user.user_type}"
     
-    class Meta:
-        db_table = 'profile'
-        ordering = ['-created_at']
-        indexes = [
-            models.Index(fields=['role']),
-            models.Index(fields=['email']),
-        ]

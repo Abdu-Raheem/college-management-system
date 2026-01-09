@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
 
 from accountapp.models import Profile
-from .forms import ProfileForm
+from .forms import ProfileForm, LoginForm
 
 
 def sample(request):
@@ -33,8 +34,8 @@ def profile(request, user_id):
 
     profile = Profile.objects.get(id=user_id)
     return render(request, 'profile.html', context={
-        'name': profile.name,
-        'email': profile.email,
+        'name': profile.user.first_name,
+        'email': profile.user.email,
         'phone': profile.phone,
         'house_name': profile.house_name,
         'street': profile.street,
@@ -62,3 +63,30 @@ def create_profile(request):
     return render(request, 'create-profile.html', context={
         'form': form
     })
+
+
+def login_user(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('profile', user_id=user.profile.id)
+            else:
+                return render(request, 'login.html', context={
+                    'form': form,
+                    'error': 'Invalid username or password'
+                })
+        else:
+            return render(request, 'login.html', context={
+                'form': form,
+                'error': 'Invalid username or password'
+            })
+    else:
+        form = LoginForm()
+        return render(request, 'login.html', context={
+            'form': form
+        })

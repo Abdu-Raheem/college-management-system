@@ -61,6 +61,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'djangobasics.wsgi.application'
 
+AUTH_USER_MODEL = 'accountapp.CustomUser'
+
 
 DATABASES = {
     'default': {

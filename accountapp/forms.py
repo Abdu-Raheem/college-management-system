@@ -24,3 +24,8 @@ class ProfileForm(forms.ModelForm):
         model = Profile
         fields = "__all__"
         exclude = ["created_at", "updated_at", "is_active", "is_verified"]
+
+
+class LoginForm(forms.Form):
+    username = forms.CharField(max_length=100)
+    password = forms.CharField(max_length=100)
